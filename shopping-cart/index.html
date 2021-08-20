@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;
+        }
+
+        header h3 {
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .shopping-cart {
+            padding: 8px;
+            width: 70vw;
+            margin: 0 auto;
+        }
+        .shopping-cart thead {
+            background-color: coral;
+            color: #fff;
+        }
+        .product, .qty {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .product img {
+            width: 50%;
+        }
+        .qty button, .qty input {
+            padding: 8px 12px;
+            font-size: 20px;
+            font-weight: 400;
+            border: 0;
+            background-color: transparent;
+        }
+        .qty button {
+            cursor: pointer;
+        }
+        .qty input {
+            width: 45px;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+
+        .price, #price {
+            font-size: 22px;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        tbody tr {
+            background-color: #f3f3f3;
+            margin: 8px 0;
+        }
+
+        .btn {
+            padding: 15px 28px;
+            border-radius: 3px;
+            background-color: coral;
+            border: 0;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <header>
+            <h3>Shopping Cart</h3>
+        </header>
+
+        <section class="shopping-cart">
+            <table cellpadding=20 cellspacing=0>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <div class="shopping">
+                        <!-- Single Product -->
+                        <tr>
+                            <td>
+                                <div class="product">
+                                    <img src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                                    <div class="product-desc">
+                                        <h3>Apple iPhone S3</h3>
+                                        <p>RAM: 4GM, ROM: 64GM</p>
+                                        <p>price: $ <span class="price-product">520</span></p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="qty">
+                                    <button type="button" id="phone-minus">-</button>
+                                    <input type="text" id="phone-field" min="0" value="1">
+                                    <button type="button" id="phone-plus">+</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price">$ <span id="phone-price">600</span></div>
+                            </td>
+                        </tr>
+                        <!-- Single Product -->
+                        <tr>
+                            <td>
+                                <div class="product">
+                                    <img src="https://images.pexels.com/photos/850885/pexels-photo-850885.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                                    <div class="product-desc">
+                                        <h3>iPhone S3 Casing</h3>
+                                        <p>Silicon case</p>
+                                        <p>price: $ <span class="price-product">70</span></p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="qty">
+                                    <button type="button" id="case-minus">-</button>
+                                    <input type="number" id="case-field" min="0" value="1">
+                                    <button type="button" id="case-plus">+</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price">$ <span id="case-price">70</span></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 20%;font-size: 20px; font-weight: 700;" colspan="2">Subtotal: </td>
+                            <td><div class="price">$ <span id="subtotal">1220</span></div></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 20%;font-size: 20px; font-weight: 700;;" colspan="2">Tax: </td>
+                            <td><div class="price">$ <span id="tax">0</span></div></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 20%;font-size: 20px; font-weight: 700;;" colspan="2">Total: </td>
+                            <td><div class="price">$ <span id="total">1220</span></div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <button class="btn" type="button">Check Out</button>
+                            </td>
+                        </tr>
+                    </div>
+                </tbody>
+            </table> 
+        </section>
+    </main>
+    
+
+    <script src="js/script.js"></script>
+</body>
+</html>
